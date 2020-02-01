@@ -54,5 +54,6 @@ public class Main {
         System.out.println("\t3 --> Unesite cijenu sata: ");
         System.out.println("\t4 --> Ispis svih izdatih karati: ");
         System.out.println("\t5 --> Exit ");
+        System.out.print("Unos: ");
     }
 }
