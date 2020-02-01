@@ -1,25 +1,27 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Aparat {
+	// index 0 je dnevna index 1 je sat
 	ArrayList<Karta> sveKarte;
-	HashMap<String, Double> vrstaKarti;
+	ArrayList<Double> cijena;
 
 	Aparat() {
 		sveKarte = new ArrayList<Karta>();
-		vrstaKarti = new HashMap<String, Double>();
-		vrstaKarti.put("Sat", 1.0);
-		vrstaKarti.put("Dnevna", 10.0);
+		cijena = new ArrayList<Double>();
+		cijena.add(10.0);
+		cijena.add(1.0);
 	}
 
 	boolean izdajKartu(int brojKovanica, double iznos) {
 		if (brojKovanica <= 0 || iznos <= 0)
 			return false;
 		if (iznos == 0.5 || iznos == 1.0 || iznos == 2.0) {
-			if (vrstaKarti.get("Dnevna") >= brojKovanica * iznos)
-				sveKarte.add(new Karta("Dnevna", 24));
-			else if (vrstaKarti.get("Sat") >= brojKovanica * iznos)
-				sveKarte.add(new Karta("Sat", Math.round(brojKovanica * iznos) * 1.0));
+			if (cijena.get(0) <= brojKovanica * iznos)
+				sveKarte.add(new DnevnaKarta());
+			else if (cijena.get(1) <= brojKovanica * iznos) {
+				int broj = (int)(brojKovanica * iznos / cijena.get(1));
+				sveKarte.add(new SatKarta(broj));				
+			}
 			return true;
 		}
 		return false;
@@ -34,13 +36,13 @@ public class Aparat {
 	void setDnevna(double cijena) {
 		if (cijena <= 0)
 			return;
-		vrstaKarti.put("Dnevna", cijena);
+		this.cijena.add(0, cijena);
 	}
 
 	void setSat(double cijena) {
 		if (cijena <= 0)
 			return;
-		vrstaKarti.put("Sat", cijena);
+		this.cijena.add(1,cijena);
 	}
 
 	int getSize() {
