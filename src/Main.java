@@ -3,10 +3,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        int pocetak, kraj, brojKovanica, unos = -1;
-        double kovanica;
-        String karta;
+	public static void main(String[] args) {
+		
 
         Scanner input = new Scanner(System.in);
         Date date;
