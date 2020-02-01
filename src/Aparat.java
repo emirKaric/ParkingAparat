@@ -20,7 +20,7 @@ public class Aparat {
 			if (vrstaKarti.get("Dnevna") >= brojKovanica * iznos)
 				sveKarte.add(new Karta("Dnevna", 24));
 			else if (vrstaKarti.get("Sat") >= brojKovanica * iznos)
-				sveKarte.add(new Karta("Sat", Math.round(brojKovanica * iznos) * 1.0));
+				sveKarte.add(new Karta("Sat", (int) Math.round(brojKovanica * iznos)));
 			return true;
 		}
 		return false;

@@ -4,10 +4,11 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+		int unos, brojKovanica;
+		double kovanica;
 		
-
+		
         Scanner input = new Scanner(System.in);
-        Date date;
         Aparat aparat = new Aparat();
 
         do {
@@ -32,7 +33,7 @@ public class Main {
                 case 3:
                     System.out.println("Unesite cijenu sata: ");
                     int cijenaSata = input.nextInt();
-                    aparat.cijenaSata(cijenaSata);
+                    aparat.setSat(cijenaSata);
                     break;
                 case 4:
                     System.out.println("Sve izdate karte: ");
@@ -42,6 +43,7 @@ public class Main {
                     break;
             }
         } while (unos != 5);
+        input.close();
     }
 
     public static void menu() {
