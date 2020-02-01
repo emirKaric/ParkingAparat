@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Aparat {
+  
 	ArrayList<Karta> sveKarte;
 	HashMap<String, Double> vrstaKarti;
 	
