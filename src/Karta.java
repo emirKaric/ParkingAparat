@@ -5,7 +5,8 @@ public abstract class Karta {
 	protected int id;
 	protected static int trenutniId;
 	protected int ukupnoSati;
-	
+	protected Date kraj;
+
 	abstract public String getInfo();
 
 	public Date getDatum() {
@@ -26,7 +27,7 @@ public abstract class Karta {
 
 	@Override
 	public String toString() {
-		return "Karta [ datum = " + datum + ", id="
-				+ id + ", ukupnoSati=" + ukupnoSati + "]";
+		return " [ datum izdavanja = " + datum + ", id=" + id
+				+ ", ukupnoSati=" + ukupnoSati + ", karta validna do: " + kraj+ "]";
 	}
 }
