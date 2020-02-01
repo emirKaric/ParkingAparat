@@ -26,30 +26,31 @@ public class Main {
                     } while (!isTrue);
                     break;
                 case 2:
-                    System.out.println("Unesite cijenu dnevne karte: ");
+                    System.out.print("Unesite cijenu dnevne karte: ");
                     double dnevnaKarta = input.nextDouble();
                     aparat.setDnevna(dnevnaKarta);
                     break;
                 case 3:
-                    System.out.println("Unesite cijenu sata: ");
+                    System.out.print("Unesite cijenu sata: ");
                     int cijenaSata = input.nextInt();
                     aparat.setSat(cijenaSata);
                     break;
                 case 4:
-                    System.out.println("Sve izdate karte: ");
+                    System.out.print("Sve izdate karte: ");
                     for (int i = 0; i < aparat.getSize(); i++) {
                         System.out.println(aparat.getKartu(i).getInfo());
                     }
                     break;
             }
+            System.out.println();
         } while (unos != 5);
         input.close();
     }
 
     public static void menu() {
-        System.out.println("Welcome to BILD-IT Aparat");
+        System.out.println("Welcome to BILD-IT Aparat Menu");
         System.out.println("Time: " + new Date());
-        System.out.println("\t1 --> Unesite kartu");
+        System.out.println("\t1 --> Kreiraj kartu");
         System.out.println("\t2 --> Unesite cijenu dnevne karte: ");
         System.out.println("\t3 --> Unesite cijenu sata: ");
         System.out.println("\t4 --> Ispis svih izdatih karati: ");
