@@ -4,18 +4,20 @@ public class Aparat {
 	// index 0 je dnevna index 1 je sat
 	ArrayList<Karta> sveKarte;
 	ArrayList<Double> cijena;
+	double[] kovanice = {0.5, 1, 2};
 
 	Aparat() {
 		sveKarte = new ArrayList<Karta>();
 		cijena = new ArrayList<Double>();
 		cijena.add(10.0);
 		cijena.add(1.0);
+		
 	}
 
 	boolean izdajKartu(int brojKovanica, double iznos) {
 		if (brojKovanica <= 0 || iznos <= 0)
 			return false;
-		if (iznos == 0.5 || iznos == 1.0 || iznos == 2.0) {
+		if (iznos == kovanice[0] || iznos == kovanice[1] || iznos == kovanice[2]) {
 			if (cijena.get(0) <= brojKovanica * iznos)
 				sveKarte.add(new DnevnaKarta());
 			else if (cijena.get(1) <= brojKovanica * iznos) {

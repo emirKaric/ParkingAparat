@@ -4,12 +4,16 @@ import java.util.Date;
 
 public class DnevnaKarta extends Karta {
 	
+	@SuppressWarnings("deprecation")
 	DnevnaKarta() {
 		this.id = trenutniId++;
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 		this.datum = new Date();
 		df.format(datum);
 		this.ukupnoSati = 24;
+		kraj = new Date();
+		df.format(kraj);
+		kraj.setHours(datum.getHours()+ukupnoSati);
 	}
 
 
