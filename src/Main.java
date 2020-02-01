@@ -38,7 +38,7 @@ public class Main {
                 case 4:
                     System.out.println("Sve izdate karte: ");
                     for (int i = 0; i < aparat.getSize(); i++) {
-                        System.out.println(aparat.getKartu(i));
+                        System.out.println(aparat.getKartu(i).getInfo());
                     }
                     break;
             }
